@@ -1,0 +1,293 @@
+/* Universal Reset & Smooth Scroll */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* ଲିଙ୍କ୍ କ୍ଲିକ୍ କଲେ ପେଜ୍ ଧୀରେ କିନା ସ୍କ୍ରୋଲ୍ ହେବ */
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    background-color: #f7f9fb;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Navbar - Modern & Floating Look */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px); /* କାଚ ଭଳି ଧୂସର ଇଫେକ୍ଟ */
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #2c3e50;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: #ff4757; /* Tomato Red */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #57606f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff4757;
+    transform: translateY(-2px);
+}
+
+/* Hero Section - Eye Catching Gradient & Text */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), 
+                url('https://unsplash.com');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 140px 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    color: #f1f2f6;
+    font-weight: 300;
+}
+
+/* Luxury Pill Button */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff4757, #ff6b81);
+    color: white;
+    padding: 14px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 50px; 
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* ସୁନ୍ଦର ଆନିମେସନ୍ ବଟନ୍ */
+}
+
+.btn:hover {
+    box-shadow: 0 6px 25px rgba(255, 71, 87, 0.6);
+    transform: scale(1.08) translateY(-3px);
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.menu-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 45px;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-section h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: #ff4757;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+/* Food Card - ୩D Effect & Glow On Hover */
+.food-card {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.food-card:hover {
+    transform: translateY(-12px); /* ବାକ୍ସଟି ଅଧିକ ଉପରକୁ ଉଠିବ */
+    box-shadow: 0 15px 35px rgba(255, 71, 87, 0.15); /* ତଳେ ଲାଲ୍ ରଙ୍ଗର Glow ଆସିବ */
+}
+
+.food-badge {
+    position: absolute;
+    top: -12px;
+    left: 25px;
+    background: linear-gradient(135deg, #ff4757, #ff6b81);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 14px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(255, 71, 87, 0.3);
+}
+
+.food-card h3 {
+    margin-top: 15px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.food-card p {
+    color: #747d8c;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ff4757;
+    display: block;
+}
+
+/* About Section - Modern Wave Background */
+.about-section {
+    background: linear-gradient(135deg, #ff4757, #ee5253);
+    color: white;
+    padding: 70px 8%;
+    text-align: center;
+    box-shadow: inset 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.about-section h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.about-section p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 17px;
+    color: #ffe4e6;
+}
+
+/* Order Section & Glassmorphic Form */
+.order-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #f1f2f6, #e4e7eb);
+}
+
+.order-section h2 {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.order-section p {
+    color: #57606f;
+    margin-bottom: 35px;
+}
+
+.order-form {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.order-form input, .order-form select, .order-form textarea {
+    padding: 14px;
+    border: 1px solid #dcdde1;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background-color: #f8f9fa;
+    transition: 0.3s;
+}
+
+.order-form input:focus, .order-form select:focus, .order-form textarea:focus {
+    border-color: #ff4757;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(255, 71, 87, 0.1); /* ଫର୍ମ ବାକ୍ସ କ୍ଲିକ୍ କଲେ Glow ହେବ */
+}
+
+.order-form textarea {
+    height: 110px;
+    resize: none;
+}
+
+.btn-submit {
+    background-color: #2f3542;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(47, 53, 66, 0.2);
+    transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #ff4757;
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background-color: #2f3542;
+    color: #a4b0be;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+
